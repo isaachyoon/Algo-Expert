@@ -1,3 +1,5 @@
+//medium
+
 // Do not edit the class below except for
 // the insert, contains, and remove methods.
 // Feel free to add new properties and methods
@@ -51,7 +53,8 @@ class BST {
     // Write your code here.
     // Do not edit the return statement of this method.
     if (this.value === value) {
-      this.value = this.right.findTheNextSmallest();
+      this.value = this.right.findTheNextSmallest(this);
+      console.log(this.value);
     }
 
     if (this.left && this.left.value === value) {
@@ -68,14 +71,20 @@ class BST {
     return this;
   }
 
-  findTheNextSmallest() {
+  findTheNextSmallest(parentNode) {
     if (this.left) {
-      if (this.left.left) {
-        return this.left.findTheNextSmallest();
+      return this.left.findTheNextSmallest(this)
+    } else if (this.right) {
+      return this.right.findTheNextSmallest(this)
+    } else {
+      if (parentNode.left && parentNode.left.value === this.value) {
+        let res = this.value;
+        parentNode.left = null;
+        return res;
       } else {
-        let leftVal = this.left.value;
-        this.left = null;
-        return leftVal;
+        let res = this.value;
+        parentNode.right = null;
+        return res;
       }
     }
   }
@@ -107,12 +116,11 @@ console.log(node10.remove(10))
 function findTheNextSmallest(node) {
 	if (node.left) {
 		if (node.left.left) {
-        return node.left.findTheNextSmallest();
-      } else {
-        let leftVal = node.left.value;
-        this.left = null;
-        return leftVal;
-      }
+      return node.left.findTheNextSmallest();
+    } else {
+      let leftVal = node.left.value;
+      this.left = null;
+      return leftVal;
     }
   }
 }
