@@ -14,3 +14,12 @@ function validateBstHelper(tree, min, max) {
   }
   return left && right;
 }
+
+function double (number) {
+  return number * 2;
+}
+
+const value = double(20);
+console.log(value);
+
+
