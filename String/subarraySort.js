@@ -59,16 +59,3 @@ const input2 = [1, 2, 4, 6 ];
 // [1, 2, 4, 7, 10, 11, 7, 12]
 let res = subarraySort(input2);
 console.log(res);
-
-<html>
-  <head>
-    <title>
-      My Title
-    </title>
-  </head>
-  <body>
-    <a href="">My link</a>
-    <h1>My header</h1>
-    <p>this is the paragraph</p>
-  </body>
-</html>
