@@ -51,7 +51,26 @@ function minNumberOfJumps(array) {
 
 //1st appraoch  (n x m x o) complexity ==> you can map out all possible outcome and recursively find the minimum number of steps
 //2nd approach  use dynamic programing to see how many steps were taken so far (constant space + n^2 time complexity)
+//3rd approach instead of storing all values, think about distance covering and use max distance to jump to farthest distance covered. reduce the number of steps as you take each step forward
 
+
+function minNumberOfJumps(array) {
+  // Write your code here.
+  // Write your code here.
+	if (array.length === 1) return 0;
+  let jumps = 0;
+  let maxReach = array[0];
+  let steps = array[0];
+  for (let i = 1; i < array.length -1; i++) {
+		maxReach = Math.max(maxReach, i + array[i]);
+    steps--;
+		if (steps === 0) {
+      steps = maxReach - i;
+      jumps++;
+    }
+  }
+	return jumps + 1;
+}
 let input1 = [3, 4, 2, 1, 2, 3, 7, 1, 1, 1, 3];
 let input2 = [1, 1];
 let input3 = [2, 1, 2, 3, 1, 1, 1];
