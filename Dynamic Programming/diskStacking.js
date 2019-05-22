@@ -29,4 +29,3 @@ function diskStacking(disks) {
 
 let input = [[2, 2, 1], [2, 1, 2], [2, 3, 4], [3, 2, 5], [4, 4, 5], [2, 2, 8]];
 let res = diskStacking(input);
-console.log(res)
