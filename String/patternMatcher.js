@@ -1,7 +1,7 @@
 function patternMatcher(pattern, string) {
   // Write your code here.
   let patternHash = {};
-  for (let i = 0; i < pattern.length; i++) {
+  for (let i = 0; i < pattern.length; i++) { //O(n)
     if (!patternHash[pattern[i]]) {
       patternHash[pattern[i]] = 1;
     } else {
@@ -14,7 +14,7 @@ function patternMatcher(pattern, string) {
   if (num_x === 0 || num_y === 0) {
     start = 0;
   }
-  for (let i = start; i < string.length; i++) {
+  for (let i = start; i < string.length; i++) { //O(m)
     let x_char = i;
     let y_char = (string.length - (x_char * num_x)) / num_y;
     if (x_char < 0 || y_char < 0) continue;
