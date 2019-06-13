@@ -22,6 +22,6 @@ function boggleBoard(board, words) {
 
 function findInBoggleBoard(board, r, c, word, ind) {
   if (board[r][c] === word[ind]) {
-    
+
   }
 }
