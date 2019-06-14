@@ -1,27 +1,22 @@
 function numberOfBinaryTreeTopologies(n) {
   // Write your code here.
-  let arr = [1, 1, 2];
-  let arr2 = [1, 1, 1, 1, 2, 2];
-  let res = helper(n-1, arr, arr, arr2);
-  return res;
+  let memo = {};
+  return helper(n-1, memo) + 1;
 }
 
-function helper(n, arr, arr1, arr2) {
-  if (n === 0) {
-    return 1;
-  }
-  let numTree = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (n - arr[i] >= 0) {
-      if (arr[i] === 2) {
-        numTree += helper(n - arr[i], arr2, arr1, arr2)
-      } else {
-        numTree += helper(n - arr[i], arr1, arr1, arr2);
-      }
+function helper(n, memo, leftInd = 0) {
+  for (let i = 0; i <= n; i++) {
+    for (let j = 0; j <= i; j++) {
+      memo[]
     }
   }
-  return numTree;
 }
 
-let res = numberOfBinaryTreeTopologies(5);
+function Node(val) {
+  this.val = val;
+  this.left = this.right = null
+}
+
+let res = numberOfBinaryTreeTopologies(3);
+
 console.log(res);
