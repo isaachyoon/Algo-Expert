@@ -23,6 +23,7 @@ function boggleBoard(board, words) {
 
 function findWord(board, r, c, trie, res, word = '') {
   if (trie['*']) {
+    if (res.indexOf(word) === -1)
     res.push(word);
     // return;
   }
@@ -90,4 +91,7 @@ const expected = ["yours", "help", "danger", "san", "at"];
 
 const words2 = ["agmsy", "agmsytojed", "agmsytojedinhcbgl", "agmsytojedinhcbfl"];
 const expected2 = ["agmsy", "agmsytojed", "agmsytojedinhcbfl"];
-boggleBoard(board2, words2)
+
+const words3 = ["frozen", "rotten", "teleport", "city", "zutgatz", "kappa", "before", "rope", "obligate", "annoying"];
+const expected3 = ["frozen", "rotten", "teleport", "kappa", "before", "rope", "obligate"];
+boggleBoard(board3, words3)
