@@ -68,5 +68,5 @@ function largestRange(array) {
 const input1 = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6];
 const input2 = [4, 2, 1, 3, 6];
 const input3 = [0, 9, 19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14];
-let res = largestRange(input1);
+let res = largestRange(input3);
 console.log(res)
